@@ -7,6 +7,14 @@ file created for use in assignments in WEB231
 as outlined in the document
 WEB231_Assign_1 by Professor Krasso (n.d.)
 accessed on: May 29, 2021
+
+W3Schools HTML DOM Event addEventListener() Method
+url: https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+accessed on: 6/4/2021
+
+W3Schools Window alert() Method
+url: https://www.w3schools.com/jsref/met_win_alert.asp 
+accessed on: 6/4/2021
 */
 
 .card {
@@ -72,4 +80,20 @@ accessed on: May 29, 2021
 
 .full-width {
     width: 100%;
+}
+
+/* Week 2.2 Additions */
+
+.return-home {
+    text-decoration: underline;
+    color:#453674;
+}
+
+.return-home:hover {
+    color:#4F3674;
+    background-color: #D6A800;
+}
+
+.return-home:visited {
+    color: #3C275A;
 }

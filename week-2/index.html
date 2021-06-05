@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta name="description"
+        content="Exercise 2.2-Hello JavaScript"/>
+    <meta name="keywords"
+        content="WEB231, Web Development, Exercise 2.2, week 2"/>
+    <meta name="robots"
+        content="nofollow" />
+    <meta name="author"
+        content="William Talley"/>
+    <link rel="stylesheet" type="text/css" href="\site.css">
+    <link rel="stylesheet" type="text/css" href="\global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Exhibit A User Interface
+    W3Schools HTML DOM Event addEventListener() Method
+url: https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+accessed on: 6/4/2021-->
+
+    <div class="container">
+        <h1>Exercise 2.2 Hello JavaScript</h1>
+
+        <button id="btn">What course am I taking?</button>
+
+        <p>You are now in Professor Seymour's world!</p>
+
+    </div>
+
+    <a href class="return-home" src="\index.html">Return</a>
+
+    <script>
+
+        document.getElementById("btn").addEventListener("click", myFunction)
+       function myFunction () {
+        alert("WEB231 - Enterprise JavaScript I")
+       }
+       
+    </script>
+
+</body>
+</html>
