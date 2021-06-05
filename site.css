@@ -28,3 +28,22 @@ a:hover {
 a:visited {
     color: #3C275A;
 }
+
+/* Week 2.2 Additions */
+
+.return-home {
+    text-decoration: underline;
+    color:#453674;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.return-home:hover {
+    color:#4F3674;
+    background-color: #D6A800;
+}
+
+.return-home:visited {
+    color: #3C275A;
+}
