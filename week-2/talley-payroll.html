@@ -1,0 +1,124 @@
+<!--
+    file created for use in assignments in WEB231
+as outlined in the document
+WEB231_Assign_1 by Professor Krasso (n.d.)
+accessed on: June 5, 2021
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta name="description"
+        content="Assignment 2.3 Variable and Values"/>
+    <meta name="keywords"
+        content="WEB231, Web Development, Assignment 2.3, week 2"/>
+    <meta name="robots"
+        content="nofollow" />
+    <meta name="author"
+        content="William Talley"/>
+    <link rel="stylesheet" type="text/css" href="talley-payroll.css">
+    <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<!--Exhibit A User Interface Sources 
+    W3Schools HTML DOM Event addEventListener() Method
+url: https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+accessed on: 6/5/2021
+w3Schools JavaScript toFixed() Method
+url: https://www.w3schools.com/jsref/jsref_tofixed.asp 
+accessed on: 6/5/2021
+    W3Schools JavaScript Date Reference
+url: https://www.w3schools.com/jsref/jsref_obj_date.asp
+accessed on 6/5/2021
+-->
+<body>
+
+    <h1 id="payroll-header">Payroll System</h1>
+
+    <h3>Employee Record 1</h3>
+        <ul>
+            <li id="txtFirstNameEmpOne"></li>
+            <li id="txtLastNameEmpOne"></li>
+            <li id="txtAddressEmpOne"></li>
+            <li id="txtHireDateEmpOne"></li>
+            <li id="txtPayRateEmpOne"></li>
+        </ul>
+
+    <h3>Employee Record 2</h3>
+    <ul>
+        <li id="txtFirstNameEmpTwo"></li>
+        <li id="txtLastNameEmpTwo"></li>
+        <li id="txtAddressEmpTwo"></li>
+        <li id="txtHireDateEmpTwo"></li>
+        <li id="txtPayRateEmpTwo"></li>
+    </ul>
+
+    <h3>Employee Record 3</h3>
+    <ul>
+        <li id="txtFirstNameEmpThree"></li>
+        <li id="txtLastNameEmpThree"></li>
+        <li id="txtAddressEmpThree"></li>
+        <li id="txtHireDateEmpThree"></li>
+        <li id="txtPayRateEmpThree"></li>
+    </ul>
+
+    <a href="https://billyrtalley.github.io/web-231/" class="return-home">Return</a>
+<script>
+
+// Employees First Names
+
+    const txtFirstNameEmpOne = (document.getElementById(
+        "txtFirstNameEmpOne").innerHTML = "Ludwig");
+    const txtFirstNameEmpTwo = (document.getElementById(
+        "txtFirstNameEmpTwo").innerHTML = "Johan");
+    const txtFirstNameEmpThree = (document.getElementById(
+        "txtFirstNameEmpThree").innerHTML = "Wolfgang");
+
+// Employees Last Names
+
+    const txtLastNameEmpOne = (document.getElementById(
+        "txtLastNameEmpOne").innerHTML = "Beethoven");
+    const txtLastNameEmpTwo = (document.getElementById(
+        "txtLastNameEmpTwo").innerHTML = "Bach");
+    const txtLastNameEmpThree = (document.getElementById(
+        "txtLastNameEmpThree").innerHTML = "Mozart");
+
+//Employees Home Addresses
+
+    const txtAddressEmpOne = (document.getElementById(
+        "txtAddressEmpOne").innerHTML = "600 Main Street");
+    const txtAddressEmpTwo = (document.getElementById(
+        "txtAddressEmpTwo").innerHTML = "555 Main Street");
+    const txtAddressEmpThree = document.getElementById(
+        "txtAddressEmpThree").innerHTML = "717 Main Street";
+
+//Employees Hire Dates
+
+    const txtHireDateEmpOne = (document.getElementById(
+       "txtHireDateEmpOne" 
+    ).innerHTML = new Date("2020-12-9").toLocaleDateString("en-US"));
+    const txtHireDateEmpTwo = (document.getElementById(
+        "txtHireDateEmpTwo"
+        ).innerHTML = new Date("2020-12-9").toLocaleDateString("en-US")); 
+    const txtHireDateEmpThree = (document.getElementById(
+        "txtHireDateEmpThree"
+        ).innerHTML = new Date("2020-12-9").toLocaleDateString("en-US"));
+
+//Employees Hourly Pay Rates
+
+    const txtPayRateEmpOne = (document.getElementById(
+        "txtPayRateEmpOne").innerHTML = (23.45).toFixed(1));
+    const txtPayRateEmpTwo = (document.getElementById(
+        "txtPayRateEmpTwo").innerHTML = (34.56).toFixed(1));
+    const txtPayRateEmpThree = (document.getElementById(
+        "txtPayRateEmpThree").innerHTML = (45.67).toFixed(1));
+
+
+</script>
+
+</body>   
+</html>

@@ -1,0 +1,28 @@
+ /*sections of this code were derived from
+Bellevue University
+WEB200 Week9 assignment guidelines 
+assignment completed by William Talley
+May 16, 2021
+file created for use in assignments in WEB231
+as outlined in the document
+WEB231_Assign_1 by Professor Krasso (n.d.)
+accessed on: May 29, 2021
+*/
+
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+h1, h3 {
+    background-color: #3C275A;
+    color: #fff;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: circle;
+    color:#4F3674;
+    font-size: 18px;
+    border: dotted 1px red;
+}
