@@ -4,6 +4,14 @@
   width: 600px;
   
 }
+ 
+#game-header {
+    background-color: #3C275A;
+    color: #fff;
+    border: 1px solid #D6A800;
+    padding: 10px;
+    width: 100%;
+}
 
 .card-title {
     text-align: center;
