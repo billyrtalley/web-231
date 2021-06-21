@@ -39,9 +39,9 @@
         </form>
       </div>
       <br />
-      <div class="card">
-        <p class="card-title">Results</p>
-        <p class="card-content"></p>
+      <div id="card-results">
+        <p ids="card-results-title">Results</p>
+        <p id="card-results-content"></p>
       </div>
       <br />
       <a href="../index.html" class="return-home">Return</a>
@@ -54,13 +54,13 @@ function randomNumber() {
         let numberGuess = document.getElementById("txtMyNumber").value;
 
         if (numberGuess == rnd) {
-          document.getElementById("card-content").innerHTML =
+          document.getElementById("card-results-content").innerHTML =
             "Congratulations! You picked the correct number!";
         } else if (numberGuess > rnd) {
-          document.getElementById("card-content").innerHTML =
+          document.getElementById("card-results-content").innerHTML =
             "The number is less than " + numberGuess;
         } else {
-          document.getElementById("card-content").innerHTML =
+          document.getElementById("card-results-content").innerHTML =
             "The number is greater than " + numberGuess;
         }
       }
