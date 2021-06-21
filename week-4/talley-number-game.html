@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta
+      name="description"
+      content="Exercise 3.2-Temperature Conversion App"
+    />
+    <meta
+      name="keywords"
+      content="WEB231, Web Development, Exercise 4.2, week 4"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="William Talley" />
+    <link rel="stylesheet" type="text/css" href="talley-number-game.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+       <div class="container">
+      <h1 id="game-header">Welcome to the numbers game!</h1>
+
+      <div id="card">
+        <div id="card-title">Pick and number between 1 and 10</div>
+        <br />
+        <form>
+          <label for="txtMyNumber" id="txtMyNumberLabel">
+            Guess the number:
+          </label>
+          <input type="text" name="txtMyNumber" id="txtMyNumber" />
+          <br />
+          <button type="button" id="btnSubmit">Submit</button>
+        </form>
+      </div>
+      <br />
+      <div id="card">
+        <p id="card-title">Results</p>
+        <p id="card-content"></p>
+      </div>
+      <br />
+      <a href="../index.html" class="return-home">Return</a>
+    </div>
+     
+     <script>
+function randomNumber() {
+        const rnd = Math.floor(Math.random() * 10 + 1);
+
+        let numberGuess = document.getElementById("txtMyNumber").value;
+
+        if (numberGuess == rnd) {
+          document.getElementById("card-content").innerHTML =
+            "Congratulations! You picked the correct number!";
+        } else if (numberGuess > rnd) {
+          document.getElementById("card-content").innerHTML =
+            "The number is less than " + numberGuess;
+        } else {
+          document.getElementById("card-content").innerHTML =
+            "The number is greater than " + numberGuess;
+        }
+      }
+      document.getElementById("btnSubmit").onclick = randomNumber;
+      </script>
+  </body>
+</html>
