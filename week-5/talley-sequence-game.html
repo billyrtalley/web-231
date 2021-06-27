@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta
+      name="description"
+      content="Exercise 5.2-Number Sequence Game"
+    />
+    <meta
+      name="keywords"
+      content="WEB231, Web Development, Exercise 5.2, week 5"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="William Talley" />
+    <link rel="stylesheet" type="text/css" href="talley-sequence-game.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+    <!--Code Source Material: 
+  Mobile meta tag derived from: MDN Web Docs. n.d. url: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag Date Accessed: June 24, 2021
+Vincent, W. V. (2018, January 3). JavaScript: Print Odd or Even Numbers. William Vincent. https://wsvincent.com/javascript-print-odd-or-even-numbers/ Date Accessed: June 24,26 2021
+All Things JavaScript, LLC. (2017, July 5). JavaScript Problem: Computing a Fibonacci Sequence [Video]. YouTube. https://www.youtube.com/watch?v=ngS5aZVmqok Date Accessed: June 23-26, 2021
+  Professor Krasso, WEB231: Enterprise JavaScript Assignment 5, Bellevue University
+  Professor Krasso, WEB231: HTML-CSS-JS, Bellevue University
+  Additional collaboration and troubleshooting (error detection) help was provided by Adam Rodgers, Bellevue University WEB231 classmate-->
+    
+      <div class="container">
+      <h1 id="game-header">Welcome to the number sequence game!</h1>
+
+      <div id="card">
+        <div id="card-title"> </div>
+        <br />
+        <form class= "drop-down-menu" id="drop-down-menu">
+  <label for="sequence">Choose a number sequence:</label>
+  <select name="fib" id="fibSequence">
+    <option value="select">Select</option>
+    <option value="fibonacci">Fibonacci Sequence</option>
+    <option value="even">Even Numbers</option>
+    <option value="odd">Odd Numbers</option>
+  </select>
+  <br><br>
+  
+          <br />
+  <button type="button" id="btnDisplaySequence">Display Sequence</button>
+</form>
+      </div>
+      <br />
+      <div id="card">
+        <p id="card-title"> Sequence Results</p>
+        <p id="card-content"></p>
+      </div>
+      <br />
+      <a href="../index.html" class="return-home">Return</a>
+    </div>
+     
+     <script>
+       
+       function displaySequence() {
+        const choice = document.getElementById("fibSequence").value;
+         if (choice == "fibonacci") {
+         let num1 = 0;
+         let num2 = 1;
+         let next;   
+         let fibonacciSequenceText = "";
+         while (num1 <= 40) {
+           fibonacciSequenceText = fibonacciSequenceText + num1 + ", ";
+           next = num1 + num2;
+           num1 = num2;
+           num2 = next;
+           }
+      document.getElementById("card-content").innerHTML =
+      fibonacciSequenceText.slice(0, -2);
+       } else if (choice == "even") {
+         let evenSequence = 0;
+         let result = "";
+         do {
+         evenSequence = evenSequence + 2;
+         result = result + evenSequence + ", ";
+       } while (evenSequence < 20);
+       document.getElementById("card-content").innerHTML = result.slice(
+       0,
+       -2
+       );
+       } else if (choice == "odd") {
+         let oddSequence = -1;
+         let result = "";
+         do {
+           oddSequence = oddSequence + 2;
+           result = result + oddSequence + ", ";
+         } while (oddSequence < 19); 
+         document.getElementById("card-content").innerHTML = result.slice(
+         0,
+         -2
+         );
+       } else if (choice == "select") {
+         alert("Invalid selection, please try again.");
+       }
+       }
+       document.getElementById("btnDisplaySequence").onclick = displaySequence;
+       
+     </script>
+  </body>
+</html>
