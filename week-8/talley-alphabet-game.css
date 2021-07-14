@@ -1,0 +1,49 @@
+
+
+#btnFindLetter {
+    border: none;
+    border-radius: 5px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 20px;
+     margin-top: 35px;
+     cursor: pointer;
+     padding: 10px; 
+     padding-bottom: 15px;
+     color: #fff;
+     background-color: #3C275A;
+     width: 400px;
+     height: 55px;
+ }
+
+ #txtMyNumberLabel {
+   margin-left: 10px;
+   margin-right: 10px;
+ }
+
+ #txtPosition {
+    padding: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+ }
+
+ #allLetters {
+   margin-left: 10px;
+ }
+ 
+ #btnFindLetter:hover {
+   background-color: #D6A800;
+   color: #4F3674;
+   border: 1px solid #3C275A;  
+ }
+ 
+ #allLetters {
+   font-size: 28px; 
+ }
+
+ #gameResults {
+  margin-left: 10px;
+  font-size: 28px;
+ }
