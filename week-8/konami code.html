@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta
+      name="description"
+      content="Exercise 8.2 Alphabet Game"
+    />
+    <meta
+      name="keywords"
+      content="Konami Code, js practice, week 8"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="William Talley" />
+    <link rel="stylesheet" type="text/css" href="talley-alphabet-game.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+    <!--Code Source Material: 
+  Go Make Things. How to create a Konami Code easter egg with vanilla JS. September 4, 2019. url: https://gomakethings.com/how-to-create-a-konami-code-easter-egg-with-vanilla-js/ 
+  Chris Ferdinandi. Konami Code. n.d. url: https://codepen.io/cferdinandi/pen/qBWVPqL?editors=1011 Date Accessed: July 13, 2019
+  Image Source: Contra. Konami Industry Co. Trademark and (C) 1998. Licensed by Nintendo of America INC. -->
+
+  <div class="container">
+    <h1 id="game-header">Welcome to the Konami Code Game!</h1>
+
+    <div class="card">
+      <div class="card-title">Enter the Konami code on your keyboard (ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a)</div>
+    </div>
+
+    <div>
+        <img class="contra" src="https://i.imgur.com/Ikx5DvQ.jpg" alt="Konami Contra (C) 1997">  
+    </div>
+
+    <script>
+     var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var current = 0;
+
+var keyHandler = function (event) {
+
+	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+	if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+		current = 0;
+		return;
+	}
+
+	// Update how much of the pattern is complete
+	current++;
+
+	// If complete, alert and reset
+	if (pattern.length === current) {
+		current = 0;
+		window.alert('You found it!');
+	}
+
+};
+
+// Listen for keydown events
+document.addEventListener('keydown', keyHandler, false);
+
+    </script>
+    </body>
+    </html>
