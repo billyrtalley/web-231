@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <title>WEB231- Enterprise JavaScript I</title>
+    <meta
+      name="description"
+      content="Exercise 9.2 Final Card Game"
+    />
+    <meta
+      name="keywords"
+      content="WEB231, Web Development, Exercise 9.2, week 9"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="William Talley" />
+    <link rel="stylesheet" type="text/css" href="talley-card-game.css" />
+    <link rel="stylesheet" type="text/css" href="../site.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href= "https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.css" rel='Stylesheet'>
+  </head>
+
+  <body>
+    
+    <!--Code Source Material: 
+  
+  W3Schools. The JavaScript this Keyword. n.d. url: https://www.w3schools.com/js/js_this.asp   July 20-24, 2021
+  Programiz. JavaScript Program to Shuffle Deck of Cards. n.d. url: https://www.programiz.com/javascript/examples/shuffle-card Dates Accessed: July 20,21 2021
+  W3Schools. JavaScript Functions. n.d. url: https://www.w3schools.com/js/js_functions.asp Date Accessed July 19-23, 2021
+  Professor Krasso, WEB231: Enterprise JavaScript Assignment 8.2, Bellevue University
+  Professor Krasso, WEB231: HTML-CSS-JS, Bellevue University
+  Additional collaboration and troubleshooting (error detection) help was provided by Adam Rodgers, Bellevue University WEB231 classmate-->
+
+  <div class="container">
+    <h1 id="game-header">Welcome to the Card Game!</h1>
+
+    <div class="card">
+      <div class="card-title">Card Dealer</div>
+      <br />
+      <form>
+        <button onclick= "finalDeck()" type="button" id='btnDealCards' class='btn'>Deal Cards.</button>
+      </form>
+    </div>
+
+    <br />
+
+    <a href="../index.html" class="return-home">Return</a>
+
+    <div class="card">
+      
+      <div id="results-container">
+        <div class= "card-title">Shuffled Cards</div>
+        <div id="players-card-container"></div>
+      </div>
+    </div>
+    <br />
+   
+  </div>
+   
+
+
+   <script>
+     //first build variables, arrays and classes. then build functions (getDeckofCards, shuffle, buildPlayingCard, finalDeck)
+     //finalDeck will give the suits icons and colors
+     //cardOutputWithIcon will be to display the results
+
+     //variables
+
+    const CARD_COUNT = "52";
+    
+
+     //arrays
+     const cards= [];
+     const faces= ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+     const suits= ["Hearts", "Diamonds", "Clubs", "Spades"];
+
+    class Card {
+      constructor (face, suit) {
+      this.face = face;
+      this.suit = suit;
+      }
+    }
+
+    class Dealer {
+      constructor(){
+        getDeckOfCards()
+      }
+     }
+
+   function getDeckOfCards () {
+     for (count = 0; count < CARD_COUNT; count+=1) {
+       cards[count] = new Card(faces[count % 13], suits[Math.floor(count / 13)]);
+     }
+   }
+
+   function shuffle() {
+    
+     for (let firstCard = 0; firstCard < CARD_COUNT; firstCard+=1) {
+       let secondCard = Math.floor((Math.random() * CARD_COUNT));
+       let tempCard = cards[firstCard];
+       cards[firstCard] = cards[secondCard];
+       cards[secondCard] = tempCard;
+     }
+   }
+
+   function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
+    return `<div class='players-card' style='width:100%'>
+                <div class='card-title' style='color: ${faceColor}; font-size: 20px; padding-left: 10px; text-align: left;'>
+                      ${card.face}
+                </div>
+                <div class='card-content' style='font-size: 28px; padding-bottom: 25px;'>
+                <span style='color: ${suitColor}' class='${suitIcon}'></span>
+                </div>    
+            </div> `;
+        }
+
+    function finalDeck() {
+        let dealer = new Dealer();
+        let cardOutputWithIcon = "";
+        shuffle();    
+
+        for (let card of cards) {
+          switch (card.suit) {
+            case "Diamonds":
+              cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-diamond", "red", "red");
+              break;
+
+            case "Hearts":
+              cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-heart", "red", "red");
+                break;
+
+            case "Clubs":
+              cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-club", "black", "black");
+                break;
+
+            case "Spades":
+              cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-spade", "black", "black");
+              break;
+            default:
+      }
+    }
+    document.getElementById("players-card-container").innerHTML = cardOutputWithIcon;
+  }
+   </script>
+</body>
+</html>
